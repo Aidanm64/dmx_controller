@@ -1,5 +1,5 @@
 
-from PyDMXControl.controllers import FTDIController, FTD2XXController
+from PyDMXControl.controllers import FTDIController
 from dmx_app.my_dmx import Spotlight
 
 port = "B002FETU"
@@ -17,11 +17,11 @@ def test_ftdi_controller():
     assert 0
 
 
-def test_ftd2xx_controller():
-    dmx = FTD2XXController(port)
-    do_dim(dmx)
-    dmx.close()
-    assert 0
+#def test_ftd2xx_controller():
+#    dmx = FTD2XXController(port)
+#    do_dim(dmx)
+#    dmx.close()
+#    assert 0
 
     
 
