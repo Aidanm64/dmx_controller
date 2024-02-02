@@ -1,5 +1,5 @@
 from PyDMXControl.profiles.defaults import Fixture
-from PyDMXControl.controllers import SerialController
+from PyDMXControl.controllers import FTD2XXController
 
 
 class Spotlight(Fixture):
@@ -22,7 +22,7 @@ class Spotlight(Fixture):
 class DMX:
 
     def __init__(self):
-        self.controller = SerialController("COM3")
+        self.controller = FTD2XXController(0)
 
         self.fixture1 = self.controller.add_fixture(Spotlight, name="spot1", start_channel=1)
         #self.fixture2 = self.controller.add_fixture(Spotlight, name="spot1", start_channel=7)
