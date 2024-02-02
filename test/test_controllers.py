@@ -13,6 +13,7 @@ def do_dim(dmx):
 def test_ftdi_controller():
     dmx = FTDIController(port)
     do_dim(dmx)
+    dmx.sleep_ms(5000)
     dmx.close()
     assert 0
 
