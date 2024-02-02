@@ -1,12 +1,12 @@
-from PyDMXControl.controllers import FTDIController
+from PyDMXControl.controllers import FTD2XXController
 from PyDMXControl.controllers.utils.debug import Debugger
 from dmx_app import functs
 from dmx_app.my_dmx import Spotlight
 
 def run():
 
-    dmx = FTDIController("B002FETU")
-    debugger = Debugger(dmx,)
+    dmx = FTD2XXController("B002FETU")
+    debugger = Debugger(dmx)
 
     f = dmx.add_fixture(Spotlight, "spotlight", start_channel=2)
     f.dim(255, 0, channel="base")
