@@ -66,6 +66,7 @@ def animate(dmx):
 
 def color_after_time(dmx):
     f = dmx.add_fixture(Spotlight, start_channel=1)
+    f.dim()
 
     f.color(Colors.Red, 1000)
     dmx.sleep_ms(2000)
