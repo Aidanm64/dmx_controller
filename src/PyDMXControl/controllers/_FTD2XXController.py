@@ -39,6 +39,7 @@ class FTD2XXController(TransmittingController):
 
         # Get new device
         self.__device = ftd2xx.open(0)
+        self.__device.resetDevice()
         self.__device.setBaudRate(250000)
         self.__device.setDataCharacteristics(8, 2, 0) # 8 bit word, 2 stop bit, no parity
 
@@ -55,7 +56,6 @@ class FTD2XXController(TransmittingController):
         data.insert(0, 0)
 
         # Write
-        self.__device.setBaudRate(300)
-        sleep(10e-6)
-        self.__device.setBaudRate(250000)
+        self.__device.setBreakOn()
+        self.__device.setBreakOff()
         self.__device.write(bytes(data))
