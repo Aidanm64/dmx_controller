@@ -4,7 +4,7 @@ from dmx_app import functs
 
 def run():
 
-    dmx = SerialController("B002FETU")
+    dmx = FTDIController("B002FETU")
 
     functs.colour_after_time(dmx)
 
