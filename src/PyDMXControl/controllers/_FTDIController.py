@@ -49,8 +49,8 @@ class FTDIController(TransmittingController):
     def _transmit(self, frame: List[int], first: int):
         # Convert to a bytearray and pad the start of the frame
         # We're transmitting direct DMX data here, so a frame must start at channel 1, but can end early
-        data = bytearray(([0] * (first)) + frame)
-
+        #data = bytearray(([0] * (first)) + frame)
+        data = bytearray([0, 255, 255])
         # The first byte in the type, and is `0` for normal DMX data
 
         # Write
