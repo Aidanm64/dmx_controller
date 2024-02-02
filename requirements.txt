@@ -1,0 +1,4 @@
+pygame
+pylibftdi
+ftd2xx
+pytest
