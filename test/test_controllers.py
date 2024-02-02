@@ -26,11 +26,11 @@ def test_print_controller():
     dmx.close()
     assert 0
 
-#def test_ftd2xx_controller():
-#    dmx = FTD2XXController(port)
-#    do_dim(dmx)
-#    dmx.close()
-#    assert 0
+def test_ftd2xx_controller():
+    dmx = FTD2XXController(port)
+    do_dim(dmx)
+    dmx.close()
+    assert 0
 
     
 
