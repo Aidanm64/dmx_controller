@@ -6,7 +6,7 @@ port = "B002FETU"
 
 
 def do_dim(dmx):
-    f = dmx.add_fixture(Spotlight, "spotlight", start_channel=1)
+    f = dmx.add_fixture(Spotlight, "spotlight", start_channel=2)
     f.dim(255, 0, channel="base")
     f.dim(255, 2000, channel="r")
 

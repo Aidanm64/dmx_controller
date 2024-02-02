@@ -52,7 +52,7 @@ class FTDIController(TransmittingController):
         data = bytearray(([0] * (first - 1)) + frame)
 
         # The first byte in the type, and is `0` for normal DMX data
-        data.insert(0, 0)
+        b = bytes(data)
 
         # Write
-        self.__device.write(bytes(data))
+        self.__device.write('\x00' + b)
