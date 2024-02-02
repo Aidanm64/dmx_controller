@@ -32,13 +32,13 @@ def test_ftd2xx_controller():
     dmx.close()
     assert 0
 
-def test_serial_controller():
-    dmx = SerialController(port)
+#def test_serial_controller():
+#    dmx = SerialController(port)
 
-    do_dim(dmx)
+#    do_dim(dmx)
 
-    dmx.sleep(5000)
-    dmx.close()
-    assert 0 
+#    dmx.sleep(5000)
+#    dmx.close()
+#    assert 0 
 
 

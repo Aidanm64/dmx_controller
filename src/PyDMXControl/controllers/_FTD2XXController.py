@@ -38,7 +38,7 @@ class FTD2XXController(TransmittingController):
                 pass
 
         # Get new device
-        self.__device = ftd2xx.open(port=self.__port)
+        self.__device = ftd2xx.open(0)
         self.__device.setBaudRate(250000)
         self.__device.setDataCharacteristics(8, 2, 0) # 8 bit word, 2 stop bit, no parity
 
