@@ -179,6 +179,16 @@ class Controller(ControllerHelpers):
             # We're done
             return None
 
+    @staticmethod
+    def sleep_ms(ms):
+        i = 0
+        try:
+            while i < ms:
+                sleep(0.001)
+                i += 1
+        except KeyboardInterrupt:
+            return None
+
     def get_frame(self) -> List[int]:
         # Generate frame
         self.__frame = [0] * 512

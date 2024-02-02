@@ -55,6 +55,7 @@ class FTDIController(TransmittingController):
         data.insert(0, 0)
 
         # Write
-        self.__device.send_break(100e-6)
+        self.__device.setBaudRate(300)
         sleep(10e-6)
-        self.__device.write(data)
+        self.__device.setBaudRate(250000)
+        self.__device.write(bytes(data))
