@@ -1,5 +1,5 @@
 
-from PyDMXControl.controllers import FTDIController, PrintController
+from PyDMXControl.controllers import FTDIController, PrintController, FTD2XXController, SerialController
 from dmx_app.my_dmx import Spotlight
 
 port = "B002FETU"
