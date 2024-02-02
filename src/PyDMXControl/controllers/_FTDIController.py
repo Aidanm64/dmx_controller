@@ -40,7 +40,7 @@ class FTDIController(TransmittingController):
         # Get new device
         self.__device = Device(port=self.__port)
         self.__device.baudrate = 250000
-        self.__device.ftdi_fn.ftdi_set_line_property(8, 2, 0) # 8 bit word, 2 stop bit, no parity
+        self.__device.ftdi_fn.ftdi_set_line_property(8, 2, 0, "BREAK_ON") # 8 bit word, 2 stop bit, no parity
 
     def _close(self):
         self.__device.close()
@@ -55,7 +55,4 @@ class FTDIController(TransmittingController):
         data.insert(0, 0)
 
         # Write
-        self.__device.baudrate = 300
-        sleep(10e-6)
-        self.__device.baudrate = 250000
         self.__device.write(bytes(data))
