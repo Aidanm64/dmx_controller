@@ -3,7 +3,7 @@ import pygame
 from pygame_widgets.slider import Slider
 from pygame_widgets.textbox import TextBox
 
-from my_dmx import DMX
+from dmx_app.my_dmx import DMX
 
 dmx = DMX()
 

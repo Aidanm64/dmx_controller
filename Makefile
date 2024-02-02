@@ -8,3 +8,6 @@ test_it:
 
 run:
 	python main.py
+
+ui:
+	python src/dmx_app/ui.py
