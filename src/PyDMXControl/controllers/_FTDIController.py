@@ -54,4 +54,4 @@ class FTDIController(TransmittingController):
         # The first byte in the type, and is `0` for normal DMX data
 
         # Write
-        self.__device.write(bytes(b))
+        self.__device.write(bytes(data))
