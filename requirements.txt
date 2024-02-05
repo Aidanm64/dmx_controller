@@ -3,3 +3,5 @@ pygame-widgets
 pylibftdi
 ftd2xx
 pytest
+
+git+https://github.com/Aidanm64/PyDMXControl
