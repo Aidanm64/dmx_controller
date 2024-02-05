@@ -12,11 +12,12 @@ def run():
     #f.dim(255, 0, channel="base")
     #f.dim(255, 2000, channel="r")
 
-    dimmers = {:}
+    dimmers = {}
     for i in range(8):
-        dimmers[str(i)]["r"] = dmx.add_fixture(Dimmer, f"dimmer_{i}_r", start_channel=1+3*i)
-        dimmers[str(i)]["g"] = dmx.add_fixture(Dimmer, f"dimmer_{i}_g", start_channel=2+3*i)
-        dimmers[str(i)]["b"] = dmx.add_fixture(Dimmer, f"dimmer_{i}_b", start_channel=3+3*i)
+        dimmers[i] = {}
+        dimmers[i]["r"] = dmx.add_fixture(Dimmer, f"dimmer_{i}_r", start_channel=1+3*i)
+        dimmers[i]["g"] = dmx.add_fixture(Dimmer, f"dimmer_{i}_g", start_channel=2+3*i)
+        dimmers[i]["b"] = dmx.add_fixture(Dimmer, f"dimmer_{i}_b", start_channel=3+3*i)
     dmx.web_control()
     dmx.sleep_till_enter()
     dmx.close()
