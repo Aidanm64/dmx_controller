@@ -5,7 +5,7 @@ from dmx_app.my_dmx import Spotlight
 
 def run():
 
-    dmx = FTD2XXController("B002FETU")
+    dmx = FTD2XXController(0)
     debugger = Debugger(dmx)
 
     f = dmx.add_fixture(Spotlight, "spotlight", start_channel=1)
