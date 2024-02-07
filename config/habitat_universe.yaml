@@ -1,0 +1,17 @@
+
+
+fixtures:
+  spot_1:
+    kind: Spotlight
+    start_channel: 1
+  spot_2:
+    kind: Spotlight
+    start_channel: 6
+
+  strip_1_1:
+    kind: RGB_Vdim
+    start_channel: 11
+
+  strip_1_2:
+    kind: RGB_Vdim
+    start_channel: 14

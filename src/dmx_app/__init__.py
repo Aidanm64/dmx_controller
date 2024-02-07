@@ -1,6 +1,7 @@
 from PyDMXControl.controllers import FTD2XXController
 from PyDMXControl.controllers.utils.debug import Debugger
 from PyDMXControl.profiles.Generic import Dimmer, RGB_Vdim
+from PyDMXControl import Colors
 from dmx_app import functs
 from dmx_app.my_dmx import Spotlight
 

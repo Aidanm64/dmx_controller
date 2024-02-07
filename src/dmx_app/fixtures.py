@@ -1,5 +1,4 @@
-from PyDMXControl.profiles.defaults import Fixture
-from PyDMXControl.controllers import FTD2XXController
+from PyDMXControl.profiles.defaults import Fixture, RGB_Vdim
 
 
 class Spotlight(Fixture):
@@ -17,19 +16,3 @@ class Spotlight(Fixture):
         self._register_channel('effect')
         self.dim(255, channel="base")
         self.dim(0, channel='effect')
-
-class DMX:
-
-    def __init__(self):
-        self.controller = FTD2XXController(0)
-
-        self.fixture1 = self.controller.add_fixture(Spotlight, name="spot1", start_channel=1)
-        #self.fixture2 = self.controller.add_fixture(Spotlight, name="spot1", start_channel=7)
-
-
-    def set_value(self, channel, value):
-        self.fixture1.dim(value, 0, channel)
-        #self.fixture2.dim(255-value, 0, channel)
-
-    def close(self):
-        self.controller.close()
