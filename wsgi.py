@@ -1,4 +1,9 @@
 
-from dmx_app.web.app import app
+from dmx_app.web.web_controller import WebController
+from dmx_app.service import DMXService
 
-app.run("0.0.0.0", port=8000, debug=True)
+service = DMXService()
+
+web_controller = WebController(dmx_service=service)
+
+service.dmx.sleep_till_enter()
