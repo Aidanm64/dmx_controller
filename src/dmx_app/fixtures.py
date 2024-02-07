@@ -7,6 +7,7 @@ class Spotlight(Fixture):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._register_channel('base')
+        self._register_channel_aliases('base', 'dimmer')
         self._register_channel('red')
         self._register_channel_aliases('red', 'r', 'R')
         self._register_channel('green')
