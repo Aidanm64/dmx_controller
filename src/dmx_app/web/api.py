@@ -12,13 +12,13 @@ api_routes = Blueprint("api", __name__, url_prefix="/")
 def set_global_color(color):
     color = getattr(Colors, color)
     print("Setting color:", color)
-    ms = request.args.get("ms", 0)
+    ms = int(request.args.get("ms", 0))
     current_app.parent.dmx_service.set_global_color(color, ms)
     return "OK"
 
 @api_routes.route("/global/intensity/<intensity>", methods=['PUT'])
 def set_global_intensity(intensity):
-    ms = request.args.get("ms", 0)
+    ms = int(request.args.get("ms", 0))
     print("Setting intensity:",intensity)
     current_app.parent.dmx_service.set_global_intensity(intensity, ms)
     return "OK"
