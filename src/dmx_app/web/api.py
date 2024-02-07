@@ -14,6 +14,7 @@ service = DMXService()
 def set_global_color(color):
     color = getattr(Colors, color)
     current_app.parent.dmx_service.set_global_color(color)
+    return "OK"
 
 
 @api_routes.route("/fixtures", methods=['GET'])
