@@ -17,8 +17,10 @@ class Spotlight(Fixture):
         self._register_channel('white')
         self._register_channel_aliases('white', 'w', 'W')
         self._register_channel('effect')
-        self.dim(255, channel="base")
+        self.dim(255, channel='base')
         self.dim(0, channel='effect')
+        self.park_channel(channel='base')
+        self.park_channel(channel='effect')
 
 
 def from_str(class_name):
