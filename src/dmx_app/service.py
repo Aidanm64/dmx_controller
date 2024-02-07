@@ -16,6 +16,6 @@ class DMXService:
         with open(path, "r") as f:
             universe_obj = load(f.read(), Loader=Loader)
 
-        for name, fixture in universe_obj['fixtures']:
+        for name, fixture in universe_obj['fixtures'].items():
             fixture_class = str_to_class(fixture['kind'])
             self.fixtures[name] = self.dmx.add_fixture(fixture_class, name=name, start_channel=fixture['start_channel'])
