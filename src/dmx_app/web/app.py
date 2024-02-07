@@ -10,7 +10,7 @@ app = Flask(__name__)
 service = DMXService()
 
 
-@app.route("/global/color/<str:color>", method=['PUT'])
+@app.route("/global/color/<str:color>", methods=['PUT'])
 def set_global_color(color):
     color = getattr(Colors, color)
     service.set_global_color(color)
