@@ -16,11 +16,11 @@ def set_global_color(color):
     current_app.parent.dmx_service.set_global_color(color, ms)
     return "OK"
 
-@api_routes.route("/global/intensity/<intensity>", methods=['PUT'])
+@api_routes.route("/global/intensity/<int:intensity>", methods=['PUT'])
 def set_global_intensity(intensity):
     print("Setting intensity:", intensity)
     ms = int(request.args.get("ms", 0))
-    current_app.parent.dmx_service.set_global_intensity(intensity, ms)
+    current_app.parent.dmx_service.set_global_intensity(int(intensity), ms)
     return "OK"
 
 
