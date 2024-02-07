@@ -2,6 +2,7 @@ from PyDMXControl.profiles.defaults import Fixture
 from PyDMXControl.profiles.Generic import RGB_Vdim, Dimmer
 import sys
 
+from typing import Tuple, Union
 
 class Spotlight(Fixture):
     def __init__(self, *args, **kwargs):
@@ -18,6 +19,10 @@ class Spotlight(Fixture):
         self._register_channel('effect')
         self.dim(255, channel="base")
         self.dim(0, channel='effect')
+
+    def anim(self, milliseconds: int, *channels_values: Tuple[Union[str, int], int]):
+        for channel_value in ["r", "g", "b"]:
+            self.dim(channel_value[1], milliseconds, channel_value[0])
 
 
 def from_str(class_name):
