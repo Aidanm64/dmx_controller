@@ -1,4 +1,5 @@
-from PyDMXControl.profiles.defaults import Fixture, RGB_Vdim, Dimmer
+from PyDMXControl.profiles.defaults import Fixture
+from PyDMXControl.profiles.Generic import RGB_Vdim, Dimmer
 import sys
 
 class Spotlight(Fixture):
