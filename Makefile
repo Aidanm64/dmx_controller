@@ -9,5 +9,8 @@ test_it:
 run:
 	python main.py
 
+server:
+	python wsgi.py
+
 ui:
 	python src/dmx_app/ui.py

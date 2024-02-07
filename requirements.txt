@@ -3,6 +3,7 @@ pygame-widgets
 pylibftdi
 ftd2xx
 pytest
+flask
 
 git+https://github.com/Aidanm64/PyDMXControl
 PyYAML
