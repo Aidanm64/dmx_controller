@@ -1,5 +1,5 @@
-from PyDMXControl.profiles.defaults import Fixture, RGB_Vdim
-
+from PyDMXControl.profiles.defaults import Fixture, RGB_Vdim, Dimmer
+import sys
 
 class Spotlight(Fixture):
     def __init__(self, *args, **kwargs):
@@ -16,3 +16,7 @@ class Spotlight(Fixture):
         self._register_channel('effect')
         self.dim(255, channel="base")
         self.dim(0, channel='effect')
+
+
+def from_str(class_name):
+    return getattr(sys.modules[__name__], class_name)

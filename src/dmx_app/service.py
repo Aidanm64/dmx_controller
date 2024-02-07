@@ -1,6 +1,6 @@
 from PyDMXControl.controllers import FTD2XXController
 from yaml import load, Loader
-from dmx_app.utils import str_to_class
+from dmx_app.fixtures import from_str
 
 
 class DMXService:
@@ -17,5 +17,5 @@ class DMXService:
             universe_obj = load(f.read(), Loader=Loader)
 
         for name, fixture in universe_obj['fixtures'].items():
-            fixture_class = str_to_class(fixture['kind'])
+            fixture_class = from_str(fixture['kind'])
             self.fixtures[name] = self.dmx.add_fixture(fixture_class, name=name, start_channel=fixture['start_channel'])
