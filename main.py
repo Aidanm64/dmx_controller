@@ -1,4 +1,4 @@
 
-from dmx_app import run
+from dmx_app.main import run
 
 run()
