@@ -6,33 +6,33 @@ fixtures:
 
   strip_1_1:
     kind: RGB_Vdim
-    start_channel: 6
+    start_channel: 7
 
   strip_1_2:
     kind: RGB_Vdim
-    start_channel: 9
+    start_channel: 10
 
   strip_1_3:
     kind: RGB_Vdim
-    start_channel: 12
+    start_channel: 13
 
   strip_1_4:
     kind: RGB_Vdim
-    start_channel: 15
+    start_channel: 16
 
   strip_1_5:
     kind: RGB_Vdim
-    start_channel: 18
+    start_channel: 19
 
   strip_1_6:
     kind: RGB_Vdim
-    start_channel: 21
+    start_channel: 22
 
   strip_1_7:
     kind: RGB_Vdim
-    start_channel: 24
+    start_channel: 25
 
   strip_1_8:
     kind: RGB_Vdim
-    start_channel: 27
+    start_channel: 28
 
