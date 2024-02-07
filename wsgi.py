@@ -4,6 +4,7 @@ from dmx_app.service import DMXService
 import time
 
 service = DMXService()
+service.load_universe("config/test_universe.yaml")
 
 web_controller = WebController(dmx_service=service)
 
