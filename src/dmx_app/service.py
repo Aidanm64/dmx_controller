@@ -12,6 +12,10 @@ class DMXService:
         for key in self.fixtures:
             self.fixtures[key].color(color, ms)
 
+    def set_global_intensity(self, intensity, ms=0):
+        for key in self.fixtures:
+            self.fixtures[key].dim(intensity, ms)
+
     def load_universe(self, path="/app/config/habitat_universe.yaml"):
         with open(path, "r") as f:
             universe_obj = load(f.read(), Loader=Loader)
