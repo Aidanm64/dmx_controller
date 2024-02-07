@@ -62,8 +62,6 @@ class ServerThread(ExceptionThread):
 class WebController:
 
     def __init__(self, dmx_service, *,
-                 callbacks: Dict[str, Callable] = None,
-                 timed_events: Dict[str, TimedEvents] = None,
                  host: str = "0.0.0.0", port: int = 8000):
 
         # Setup flask
@@ -79,8 +77,6 @@ class WebController:
 
 
         self.dmx_service = dmx_service
-        # Setup controller
-        self.controller = controller
 
 
         # Setup template context
