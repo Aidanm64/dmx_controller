@@ -2,6 +2,7 @@ from PyDMXControl.profiles.defaults import Fixture
 from PyDMXControl.profiles.Generic import RGB_Vdim, Dimmer
 import sys
 
+
 class Spotlight(Fixture):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
