@@ -84,7 +84,7 @@ class WebController:
         def variables() -> dict:  # pylint: disable=unused-variable
             return dict({"dmx_service": dmx_service,
                          "web_resource": WebController.web_resource},
-                        **dict(globals(), **builtins.__dict__))  # Dictionary stacking to concat
+                        **dict(alls(), **builtins.__dict__))  # Dictionary stacking to concat
 
         # Setup thread
         self.__running = False

@@ -6,18 +6,19 @@ from dmx_app.fixtures import from_str
 class DMXService:
     def __init__(self, dmx=FTD2XXController(0), universe_file="config/test_universe.yaml"):
         self.dmx = dmx
-        self.load_universe(universe_file)
         self.fixtures = {}
+        self.load_universe(universe_file)
 
-    def set_global_color(self, color, ms=0):
+    def set_all_color(self, color, ms=0):
         for key in self.fixtures:
             self.fixtures[key].color(color, int(ms))
 
-    def set_global_intensity(self, intensity, ms=0):
+    def set_all_intensity(self, intensity, ms=0):
         for key in self.fixtures:
             self.fixtures[key].dim(intensity, int(ms))
 
     def load_universe(self, path="/app/config/habitat_universe.yaml"):
+        self.fixtures = {}
         with open(path, "r") as f:
             self.universe = load(f.read(), Loader=Loader)
 
