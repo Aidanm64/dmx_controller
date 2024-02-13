@@ -64,7 +64,7 @@ def set_fixture_intensity(fixture_id, value):
     return "OK"
 
 
-@api_routes.route("/fixtures/<fixture_id>/intensity/color", methods=['PUT'])
+@api_routes.route("/fixtures/<fixture_id>/color", methods=['PUT'])
 def set_fixture_color(fixture_id):
     r = int(request.args.get('r', 0))
     g = int(request.args.get('g', 0))
