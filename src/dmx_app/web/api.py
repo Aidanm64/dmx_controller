@@ -25,9 +25,10 @@ def set_all_color_from_args():
     r = int(request.args.get('r', 0))
     g = int(request.args.get('g', 0))
     b = int(request.args.get('b', 0))
+    w = int(request.args.get('w', 0))
     ms = int(request.args.get('ms', 0))
-
-    current_app.parent.dmx_service.set_all_color([r, g, b], ms)
+    print("Setting color:", [r, g, b, w])
+    current_app.parent.dmx_service.set_all_color([r, g, b, w], ms)
     return 'OK'
 
 
@@ -69,9 +70,10 @@ def set_fixture_color(fixture_id):
     r = int(request.args.get('r', 0))
     g = int(request.args.get('g', 0))
     b = int(request.args.get('b', 0))
+    w = int(request.args.get('w', 0))
     ms = int(request.args.get('ms', 0))
 
-    current_app.parent.dmx_service.set_fixture_color(fixture_id, [r, g, b], ms)
+    current_app.parent.dmx_service.set_fixture_color(fixture_id, [r, g, b, w], ms)
 
     return "OK"
 

@@ -51,7 +51,7 @@ def test_configure_fixture():
     r = requests.put(f"{url}/fixtures/strip_1_1/intensity/255")
     assert r.status_code == 200
 
-    r = requests.put(f"{url}/fixtures/strip_1_2/color?r=100,g=250,b=150")
+    r = requests.put(f"{url}/fixtures/strip_1_2/color?r=100&g=250&b=150")
     assert r.status_code == 200
 
     time.sleep(1)
