@@ -26,11 +26,11 @@ class DMXService:
             fixture_class = from_str(fixture['kind'])
             self.fixtures[name] = self.dmx.add_fixture(fixture_class, name=name, start_channel=fixture['start_channel'])
 
-    def set_fixture_color(self, fixture_id, color, ms=None):
+    def set_fixture_color(self, fixture_id, color, ms=0):
         self.fixtures[fixture_id].color(color, ms)
 
-    def set_fixture_intensity(self, fixture_id, intensity, channel="dimmer", ms=None):
-        self.fixtures[fixture_id].dim(intensity, ms=ms, channel=channel)
+    def set_fixture_intensity(self, fixture_id, intensity, channel="dimmer", ms=0):
+        self.fixtures[fixture_id].dim(intensity, ms, channel=channel)
 
     def set_channel_value(self, channel_id, value):
         self.dmx.channels[channel_id].set(int(value))
@@ -39,11 +39,11 @@ class DMXService:
 
         result = {
             "universe": self.universe['name'],
-            "fixtures":{},
-            "groups":{}
+            "fixtures": {},
+            "groups": {}
         }
 
-        for f in self.fixtures:
-            result['fixtures'][f.name] = f.json_data
+        for f_name, f in self.fixtures.items():
+            result['fixtures'][f_name] = f.json_data
 
         return result
