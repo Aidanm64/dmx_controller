@@ -3,6 +3,19 @@ from PyDMXControl.profiles.Generic import RGB_Vdim, Dimmer
 import sys
 
 
+class FixtureGroup:
+
+    def __init__(self, controller, fixtures):
+        self.controller = controller
+        self.fixtures = fixtures
+
+    def dim(self, value, ms, fixture):
+        [fixture.dim(value, ms) for fixture in self.fixtures]
+
+    def color(self, color, ms):
+        [fixture.color(color, ms) for fixture in self.fixtures]
+
+
 class Spotlight(Fixture):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

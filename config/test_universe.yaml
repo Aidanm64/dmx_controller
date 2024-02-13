@@ -1,4 +1,4 @@
-
+name: test_universe
 fixtures:
   spot_1:
     kind: Spotlight

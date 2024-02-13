@@ -1,2 +1,1 @@
-PyDMXControl
 dmx_app
